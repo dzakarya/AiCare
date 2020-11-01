@@ -1,0 +1,128 @@
+{% include 'includes/navbar3.html' %}
+{% block body %}{% endblock %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>J-One Technology</title>
+    	<script>
+		function previewImage() {
+		var file = document.getElementById("file").files;
+		if (file.length > 0) {
+			var fileReader = new FileReader();
+
+			fileReader.onload = function (event) {
+				document.getElementById("preview").setAttribute("src", event.target.result);
+			};
+
+			fileReader.readAsDataURL(file[0]);
+		}
+		}
+		</script>
+  </head>
+  <body>
+  		<div class="jumbotron bg-green">
+  			<div class="container form-control-sm">
+				<div class="row">
+			<div class="col-sm-9">
+			<img src="{{url_for('static', filename='LogoPng.png')}}">
+			</div>
+			<div class="col-sm-3">
+			<img src="{{url_for('static', filename='LogoPng.png')}}">
+			</div>
+				</div>
+			</div>
+    	<div class="text-center">
+        <h2>Corona Virus Disease Classification</h2>
+        <h3>With A.I (Artificial Intelligence)</h3>
+		</div>
+	  </div>
+		<div class="container col-sm-1">
+			<form method="POST" action="/upload" enctype="multipart/form-data" class="form-control-sm">
+			<a>Upload Foto</a><input type="file" name="file" id="file" accept="image/*" onchange="previewImage();">
+			<img id="preview">
+			</form>
+		</div>
+		<div class="row-sm-5">
+			<h2>Data Diri Pengguna</h2>
+		</div>
+    <form>
+  		<div class="form-group">
+    		<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nama Instansi</label>
+    		<div class="col-sm-5">
+      		<input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Silahkan diisi dahulu">
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nama User</label>
+    		<div class="col-sm-5">
+      		<input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Silahkan diisi dahulu">
+    	</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Alamat Instansi</label>
+    		<div class="col-sm-5">
+      		<input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Silahkan diisi dahulu">
+    	</div>
+  		</div>
+  		<button type="submit" class="col-form-label-sm btn btn-primary">Submit</button>
+	</form>
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Hasil Diagnonis"
+      },
+      data: [
+      {
+        type: "bar",
+        dataPoints: [
+        { y: 198, label: "Cystic Fibrosis"},
+        { y: 201, label: "Bronkitis"},
+        { y: 202, label: "Emfisema"},
+        { y: 236, label: "Pneumonia"},
+        { y: 395, label: "SARS"},
+        { y: 957, label: "Covid-19"}
+        ]
+      },
+      {
+        type: "bar",
+        dataPoints: [
+        { y: 166, label: "Cystic Fibrosis"},
+        { y: 144, label: "Bronkitis"},
+        { y: 223, label: "Emfisema"},
+        { y: 272, label: "Pneumonia"},
+        { y: 319, label: "SARS"},
+        { y: 759, label: "Covid-19"}
+        ]
+      },
+      {
+        type: "bar",
+        dataPoints: [
+        { y: 185, label: "Cystic Fibrosis"},
+        { y: 128, label: "Bronkitis"},
+        { y: 246, label: "Emfisema"},
+        { y: 272, label: "Pneumonia"},
+        { y: 296, label: "SARS"},
+        { y: 666, label: "Covid-19"}
+        ]
+      }
+      ]
+    });
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <div class="col-sm-5" id="chartContainer" style="height: 350px; width: 50%;">
+  </div>
+  </body>
+</div>
+</html>

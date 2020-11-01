@@ -1,0 +1,17 @@
+{% include 'layout.html'%}
+{% block body %}
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>J-One Technology</title>
+<body>
+    <div class="text-center">
+        <h2><b>Welcome J-ONE Technology</b></h2>
+        <h3><b>Lead The Future With AI</b></h3>
+        <img src="{{url_for('static', filename='Logo.png')}}" style="height:62vh">
+    <div class="text-center">
+        {% include 'includes/footer.html' %}
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}

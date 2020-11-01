@@ -1,0 +1,98 @@
+{% include 'includes/navbar3.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<h1 class="text-center">Register</h1>
+    <div class="container" style="padding-left: 150px;">
+        <div class="row">
+            <img src="{{ url_for('regisface')}}" style="height: 385px; padding-right: 10px;">
+                <form action="{{ url_for('register')}}" method="POST">
+                    <div class="container" style="padding: 10px;">
+                    <div class="form-group">
+                      <label>Name  </label>
+                      <input type="text" placeholder="Enter Your Name" name="name" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                      <label>Age  </label>
+                      <input type="text" placeholder="Enter Your Age" name="age" class="form-control" id="age">
+                    </div>
+                     <div class="form-group">
+                      <label>Gender  </label>
+                      <input type="text" placeholder="Enter Your Gender" name="gender" class="form-control" id="gender">
+                    </div>
+                    <button type="submit" class="btn form-control btn-primary">Register</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</body>
+    <div class="text-center" style="padding-top: 60px;">
+        {% include 'includes/footer.html' %}
+    </div>
+</html>

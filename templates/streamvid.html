@@ -1,0 +1,12 @@
+{% include 'layout2.html' %}
+{% block body %}
+    <div class="card-group">
+        <div class="card">
+            <img src="{{ url_for('video_feed')}}" style="width: 50vw; height: 93vh" alt="CCTV 1">
+        </div>
+        <div class="card">
+            <img src="{{ url_for('cam2')}}" style="width: 50vw; height: 93vh" alt="CCTV 2">
+        </div>
+    </div>
+{% include 'includes/navbar2.html' %}
+{% endblock %}

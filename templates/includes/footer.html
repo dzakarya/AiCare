@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  height: 25%;
+  padding: 10px;
+  position: fixed-bottom;
+}
+
+/* Remove extra left and right margins, due to padding */
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<h4 class="text-center" style="padding-bottom: 10px; padding-top: 50px"> <b>Contact Us</b></h4>
+<footer style="">
+<body>
+<div class="row" style="background-color:black; margin-right: 0px">
+     <div class="column">
+        <img src="{{url_for('static', filename='location2.png')}}" style="width: 40px ">
+        <p class="text-white">Jl. Jend. Sudirman Kav. 52-53 SCBD LOT 8</p>
+    </div>
+    <div class="column">
+        <img src="{{url_for('static', filename='Email2.png')}}" style="width: 50px ">
+        <p class="text-white">technologyjbot@gmail.com</p>
+    </div>
+    <div class="column">
+        <img src="{{url_for('static', filename='Phone.png')}}" style="width: 50px ">
+        <p class="text-white">+62 812-2039-1519</p>
+    </div>
+    <div class="column">
+        <img src="{{url_for('static', filename='web.png')}}" style="width: 50px ">
+        <p class="text-white">www.j-onetechnology.com</p>
+    </div>
+</div>
+</body>
+    <footer class="text-center" style="">&copy;<b>Copyright 2020 J-One Technology</b></footer>
+</footer>
+</html>
