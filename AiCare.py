@@ -82,7 +82,7 @@ def init():
     outputFrame = [None,None,None,None]
     lock = threading.Lock()
     url_cam = ['abi1.MOV','abi3.MOV']
-    clasmodel = load_model("resnetapd.h5")
+    clasmodel = load_model("enetapd.h5")
     mskcls = classifier(clasmodel)
 
 def init_classfier():

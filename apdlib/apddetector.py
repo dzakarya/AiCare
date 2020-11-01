@@ -50,11 +50,10 @@ class classifier():
 
 
     def predictin(self,imgin):
-        s = cv2.resize(imgin, (224, 224))
-        img = np.array(s)
-        img = img.astype('float32')
-        img = np.expand_dims(img, axis=0)
-        img = preprocess_input(img)
+        s = cv2.resize(imgin, (300, 300))
+        im = np.array(s)
+        im = im.astype('float32')
+        img = np.expand_dims(im, axis=0)
         output = self.model.predict(img)
         if max(output[0]) > 0.95:
             if output[0][0] > output[0][1]:
