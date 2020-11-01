@@ -28,7 +28,7 @@ CWD_PATH = os.getcwd()
 
 
 app = Flask(__name__)
-"""
+
 app.config['MYSQL_HOST'] = 'mydb.cthd89lrpxfp.ap-southeast-1.rds.amazonaws.com'
 app.config['MYSQL_USER'] = 'jone'
 app.config['MYSQL_PASSWORD'] = 'jonetechnology'
@@ -50,28 +50,7 @@ connection = sqlconnect.connect(host='127.0.0.1',
                                 database='persondb',
                                 user='root',
                                 password='jonetechnology')
-
-
-def load_face(num_faces):
-    label = []
-    face = []
-    X = []
-    Y = []
-    cursor = mysql.connection.cursor()
-    sql_fetch_blob_query = "SELECT id, face1, face2, face3, face4, face5, " \
-                           "face6, face7, face8, face9, face10 from people"
-
-    cursor.execute(sql_fetch_blob_query)
-    record = cursor.fetchall()
-    for row in record:
-        for i in range(num_faces):
-            label.append(row[0])
-            img = imgconvert.BinToImg(row[i + 1])
-            face.append(img)
-    print("loaded face")
-    cursor.close()
-    return face, label
-
+"""
 
 def init():
     global lock,outputFrame,stat,mskcls,url_cam,stop_event,stop_event_regis,num_faces
@@ -104,23 +83,6 @@ def store_detected(object_worker):
     connection.commit()
     cur.close()
 
-def get_info(idvisitor):
-    cur = connection.cursor()
-    querys = ("SELECT name, gender, age from people where id = %s")
-
-    try:
-        cur.execute(querys, (idvisitor,))
-        record = cur.fetchall()
-        for result in record:
-            name = result[0]
-            gender = result[1]
-            age = result[2]
-        cur.close()
-        return name,gender,age
-    except:
-        print("failed to connect database")
-        return "","",""
-
 def create_blank(width, height, rgb_color=(0, 0, 0)):
     """Create new image(numpy array) filled with certain color in RGB"""
     # Create black blank image
@@ -133,15 +95,6 @@ def create_blank(width, height, rgb_color=(0, 0, 0)):
 
     return image
 
-
-"""def regis(idcam,stop_event):
-    global outputFrame, lock
-    vs = VideoStream(url_cam[idcam]).start()
-    while not stop_event.is_set():
-        images = vs.read()
-        faceimage = mskcls.regis_face(images)
-        outputFrame[idcam+1] = images
-        outputFrame[idcam+2] = faceimage"""
 
 
 
