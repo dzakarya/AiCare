@@ -54,7 +54,7 @@ connection = sqlconnect.connect(host='127.0.0.1',
 
 def init():
     global lock,outputFrame,stat,mskcls,url_cam,stop_event,stop_event_regis,num_faces
-    num_faces = 10
+    num_faces = 5
     tolerance = 1
     stop_event = threading.Event()
     stop_event_regis = threading.Event()
